@@ -1,0 +1,66 @@
+/* Menu, grade da página e responsividade (mobile first) */
+
+/* Menu: 2 colunas no celular, 4 no desktop */
+.menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  max-width: 960px;
+  margin: -18px auto 0;
+  padding: 0 12px;
+}
+.menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 56px;
+  padding: 8px;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  background: var(--card);
+  color: var(--texto);
+  font: inherit;
+  font-weight: 600;
+  font-size: .95rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, .08);
+}
+.menu-btn .num {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--fundo);
+  font-size: .85rem;
+}
+.menu-btn.ativo { background: var(--azul); border-color: var(--azul); color: #fff; }
+.menu-btn.ativo .num { background: rgba(255, 255, 255, .25); }
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 960px;
+  margin: 16px auto;
+  padding: 0 12px;
+}
+
+.tela, .painel {
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 18px;
+}
+.tela { display: none; }
+.tela.ativa { display: block; }
+.painel h3 { margin-top: 0; }
+
+/* Tablet / desktop */
+@media (min-width: 720px) {
+  .menu { grid-template-columns: repeat(4, 1fr); }
+  main { grid-template-columns: 3fr 2fr; align-items: start; }
+  .aviso { grid-column: 1 / -1; }
+  .aviso[hidden] { display: none; }
+}

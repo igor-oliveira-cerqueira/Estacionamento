@@ -1,0 +1,44 @@
+/* Variáveis, reset e elementos básicos */
+:root {
+  --azul: #1d4ed8;
+  --azul-escuro: #1e3a8a;
+  --fundo: #f1f5f9;
+  --card: #ffffff;
+  --texto: #0f172a;
+  --suave: #64748b;
+  --borda: #e2e8f0;
+  --ok: #15803d;
+  --ok-bg: #dcfce7;
+  --erro: #b91c1c;
+  --erro-bg: #fee2e2;
+  --raio: 12px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  line-height: 1.4;
+}
+
+h2 { margin: 0 0 14px; font-size: 1.2rem; }
+h3 { margin: 18px 0 8px; font-size: 1rem; display: flex; align-items: center; gap: 8px; }
+
+.topo {
+  background: linear-gradient(135deg, var(--azul), var(--azul-escuro));
+  color: #fff;
+  text-align: center;
+  padding: 24px 16px;
+}
+.topo h1 { margin: 0; font-size: 1.6rem; letter-spacing: 2px; }
+.topo p { margin: 4px 0 0; opacity: .85; }
+
+footer { text-align: center; color: var(--suave); font-size: .85rem; padding: 16px; }
+
+:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}

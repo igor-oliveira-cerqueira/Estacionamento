@@ -1,0 +1,86 @@
+/* Formulários, botões, avisos, resultados e listas */
+form { display: grid; gap: 14px; }
+label { display: grid; gap: 6px; font-weight: 600; font-size: .9rem; }
+
+input {
+  font: inherit;
+  font-weight: 400;
+  padding: 12px;
+  min-height: 48px; /* alvo de toque confortável no celular */
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  width: 100%;
+}
+#entrada-placa, #calculo-placa, #saida-placa { text-transform: uppercase; letter-spacing: 1px; }
+
+button.primario {
+  min-height: 48px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--azul);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+button.primario:hover { background: var(--azul-escuro); }
+button.primario:disabled { opacity: .6; cursor: wait; }
+
+.aviso {
+  max-width: 960px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.aviso.ok { background: var(--ok-bg); color: var(--ok); }
+.aviso.erro { background: var(--erro-bg); color: var(--erro); }
+
+.resultado {
+  margin-top: 16px;
+  padding: 14px;
+  background: var(--fundo);
+  border-radius: 8px;
+}
+.resultado dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; }
+.resultado dt { color: var(--suave); }
+.resultado dd { margin: 0; text-align: right; font-weight: 600; }
+.resultado .total { font-size: 1.4rem; color: var(--azul); }
+
+.receita {
+  display: grid;
+  gap: 4px;
+  text-align: center;
+  padding: 20px 12px;
+  border-radius: 8px;
+  background: var(--ok-bg);
+}
+.receita strong { font-size: 2.2rem; color: var(--ok); }
+.receita-rotulo { color: var(--suave); font-size: .9rem; }
+
+.lista { display: grid; gap: 8px; }
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--fundo);
+  border-radius: 8px;
+}
+.item .placa { font-weight: 700; letter-spacing: 1px; }
+.item .detalhe { color: var(--suave); font-size: .85rem; }
+.item .valor { font-weight: 700; color: var(--ok); white-space: nowrap; }
+.item button {
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--azul);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--azul);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.vazio { color: var(--suave); font-size: .9rem; margin: 0; }
+.badge { background: var(--azul); color: #fff; border-radius: 999px; padding: 1px 9px; font-size: .8rem; }

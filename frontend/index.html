@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1d4ed8">
+  <title>Estacionamento</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>ESTACIONAMENTO</h1>
+    <p>Sistema de controle de veículos</p>
+  </header>
+
+  <nav class="menu" aria-label="Menu principal">
+    <button class="menu-btn ativo" data-tela="entrada"><span class="num">1</span> Registrar entrada</button>
+    <button class="menu-btn" data-tela="calculo"><span class="num">2</span> Calcular valor</button>
+    <button class="menu-btn" data-tela="saida"><span class="num">3</span> Registrar saída</button>
+    <button class="menu-btn" data-tela="receita"><span class="num">4</span> Receita total</button>
+  </nav>
+
+  <main>
+    <div id="aviso" class="aviso" role="status" aria-live="polite" hidden></div>
+
+    <!-- RF01 -->
+    <section id="tela-entrada" class="tela ativa">
+      <h2>Registrar entrada de veículo</h2>
+      <form id="form-entrada" novalidate>
+        <label>Placa
+          <input id="entrada-placa" type="text" placeholder="ABC-1234" maxlength="8" autocomplete="off" required>
+        </label>
+        <label>Horário de entrada
+          <input id="entrada-hora" type="time" required>
+        </label>
+        <button type="submit" class="primario">Registrar entrada</button>
+      </form>
+    </section>
+
+    <!-- RF02 -->
+    <section id="tela-calculo" class="tela">
+      <h2>Calcular valor do estacionamento</h2>
+      <form id="form-calculo" novalidate>
+        <label>Placa
+          <input id="calculo-placa" type="text" placeholder="ABC-1234" maxlength="8" autocomplete="off" required>
+        </label>
+        <label>Horário de saída
+          <input id="calculo-hora" type="time" required>
+        </label>
+        <button type="submit" class="primario">Calcular</button>
+      </form>
+      <div id="resultado-calculo" class="resultado" hidden></div>
+    </section>
+
+    <!-- RF03 -->
+    <section id="tela-saida" class="tela">
+      <h2>Registrar saída de veículo</h2>
+      <form id="form-saida" novalidate>
+        <label>Placa
+          <input id="saida-placa" type="text" placeholder="ABC-1234" maxlength="8" autocomplete="off" required>
+        </label>
+        <label>Horário de saída
+          <input id="saida-hora" type="time" required>
+        </label>
+        <button type="submit" class="primario">Registrar saída</button>
+      </form>
+      <div id="resultado-saida" class="resultado" hidden></div>
+    </section>
+
+    <!-- RF04 -->
+    <section id="tela-receita" class="tela">
+      <h2>Receita total</h2>
+      <div class="receita">
+        <span class="receita-rotulo">Acumulado das saídas registradas</span>
+        <strong id="receita-valor">R$ 0,00</strong>
+        <span id="receita-saidas" class="receita-rotulo"></span>
+      </div>
+      <h3>Últimas saídas</h3>
+      <div id="historico" class="lista"></div>
+    </section>
+
+    <aside class="painel">
+      <h3>Veículos estacionados <span id="contador" class="badge">0</span></h3>
+      <div id="estacionados" class="lista"></div>
+    </aside>
+  </main>
+
+  <footer>Tarifa: R$ 5,00 por hora ou fração de hora.</footer>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
